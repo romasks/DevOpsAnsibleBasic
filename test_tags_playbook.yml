@@ -1,0 +1,32 @@
+- hosts: appservers
+  remote_user: romasks
+  become: yes
+  tasks:
+    - name: update (repositories) package manager cache
+      ansible.builtin.apt:
+        update_cache: true
+      tags: cache
+
+    - name: install git
+      ansible.builtin.apt:
+        name: git
+        state: latest
+      tags: pckg
+
+    - name: install make
+      ansible.builtin.apt:
+        name: make
+        state: latest
+      tags: pckg
+
+    - name: create user arya
+      ansible.builtin.user:
+        name: arya
+        create_home: yes
+      tags: user
+
+    - name: create user sansa
+      ansible.builtin.user:
+        name: sansa
+        create_home: yes
+      tags: user
