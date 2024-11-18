@@ -20,4 +20,4 @@ tag-create-users:
 	ansible-playbook --check test_tags_playbook.yml -i inventory.ini -t user
 
 nginx-setup:
-	ansible-playbook test_handlers_playbook.yml -i inventory.ini
+	ansible-playbook test_variables_ini_playbook.yml -i inventory.ini

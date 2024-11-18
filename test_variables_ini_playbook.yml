@@ -10,9 +10,11 @@
       become: yes
 
     - name: copy html page
-      ansible.builtin.copy:
-        src: files/index.html
+      ansible.builtin.template:
+        src: files/index.html.j2
         dest: "{{root_dir}}/index.html"
+      notify:
+        - restart nginx
       become: yes
 
     - name: update nginx config
