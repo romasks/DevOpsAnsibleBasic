@@ -21,3 +21,6 @@ tag-create-users:
 
 nginx-setup:
 	ansible-playbook test_variables_ini_playbook.yml -i inventory.ini
+
+install-git-without-facts:
+	ansible-playbook test_facts_playbook.yml -i inventory.ini
